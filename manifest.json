@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Google maps search",
+  "description": "Reimplement google maps button",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["https://*.google.com/*", "https://*.google.se/*"],
+      "run_at": "document_idle",
+      "js": ["src/extension.js"]
+    }
+  ],
+  "permissions": [
+    "activeTab"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/index.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
